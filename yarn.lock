@@ -1514,9 +1514,9 @@ liftoff@^2.2.0:
     rechoir "^0.6.2"
     resolve "^1.1.7"
 
-berycore-lib@^0.13.19:
-  version "0.13.21"
-  resolved "https://registry.yarnpkg.com/berycore-lib/-/berycore-lib-0.13.21.tgz#a56bfca333b641c9cffb3d3e266de83132ab0697"
+berycore-lib@^0.15.38:
+  version "0.15.38"
+  resolved "https://registry.yarnpkg.com/berycore-lib/-/berycore-lib-0.15.38.tgz#a56bfca333b641c9cffb3d3e266de83132ab0697"
   dependencies:
     bn.js "=2.0.4"
     bs58 "=2.0.0"
@@ -1527,12 +1527,12 @@ berycore-lib@^0.13.19:
     scryptsy "=2.0.0"
 
 "berycore-p2p@git://github.com/berycoin-project/berycore-p2p#427dba833970d656a47dba12983c9d972a478191":
-  version "1.1.1"
+  version "5.0.01"
   resolved "git://github.com/berycoin-project/berycore-p2p#427dba833970d656a47dba12983c9d972a478191"
   dependencies:
     bloom-filter "^0.2.0"
     buffers bitpay/node-buffers#v0.1.2-bitpay
-    berycore-lib "^0.13.19"
+    berycore-lib "^0.15.38"
     socks5-client "^0.3.6"
 
 lockfile@~1.0.1:
