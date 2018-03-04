@@ -10,22 +10,22 @@ nvm install v4
 
 ## Fork and Download Repositories
 
-To develop litecore-node:
+To develop berycore-node:
 
 ```bash
 cd ~
-git clone git@github.com:<yourusername>/litecore-node.git
-git clone git@github.com:<yourusername>/litecore-lib.git
+git clone git@github.com:<yourusername>/berycore-node.git
+git clone git@github.com:<yourusername>/berycore-lib.git
 ```
 
-To develop litecoin or to compile from source:
+To develop berycoin or to compile from source:
 
 ```bash
-git clone git@github.com:<yourusername>/litecoin.git
+git clone git@github.com:<yourusername>/berycoin.git
 git fetch origin <branchname>:<branchname>
 git checkout <branchname>
 ```
-**Note**: See litecoin documentation for building litecoin on your platform.
+**Note**: See berycoin documentation for building berycoin on your platform.
 
 
 ## Install Development Dependencies
@@ -46,27 +46,27 @@ brew install zeromq
 ## Install and Symlink
 
 ```bash
-cd litecore-lib
+cd berycore-lib
 npm install
-cd ../litecore-node
+cd ../berycore-node
 npm install
 ```
-**Note**: If you get a message about not being able to download litecoin distribution, you'll need to compile litecoind from source, and setup your configuration to use that version.
+**Note**: If you get a message about not being able to download berycoin distribution, you'll need to compile berycoind from source, and setup your configuration to use that version.
 
 
-We now will setup symlinks in `litecore-node` *(repeat this for any other modules you're planning on developing)*:
+We now will setup symlinks in `berycore-node` *(repeat this for any other modules you're planning on developing)*:
 ```bash
 cd node_modules
-rm -rf litecore-lib
-ln -s ~/litecore-lib
+rm -rf berycore-lib
+ln -s ~/berycore-lib
 rm -rf bitcoind-rpc
 ln -s ~/bitcoind-rpc
 ```
 
-And if you're compiling or developing litecoin:
+And if you're compiling or developing berycoin:
 ```bash
 cd ../bin
-ln -sf ~/litecoin/src/litecoind
+ln -sf ~/berycoin/src/berycoind
 ```
 
 ## Run Tests
@@ -78,7 +78,7 @@ npm install mocha -g
 
 To run all test suites:
 ```bash
-cd litecore-node
+cd berycore-node
 npm run regtest
 npm run test
 ```
@@ -102,27 +102,27 @@ cd ~
 mkdir devnode
 cd devnode
 mkdir node_modules
-touch litecore-node.json
+touch berycore-node.json
 touch package.json
 ```
 
-Edit `litecore-node.json` with something similar to:
+Edit `berycore-node.json` with something similar to:
 ```json
 {
   "network": "livenet",
   "port": 3001,
   "services": [
-    "litecoind",
+    "berycoind",
     "web",
     "insight-api",
     "insight-ui",
     "<additional_service>"
   ],
   "servicesConfig": {
-    "litecoind": {
+    "berycoind": {
       "spawn": {
-        "datadir": "/home/<youruser>/.litecoin",
-        "exec": "/home/<youruser>/litecoin/src/litecoind"
+        "datadir": "/home/<youruser>/.berycoin",
+        "exec": "/home/<youruser>/berycoin/src/berycoind"
       }
     }
   }
@@ -135,13 +135,13 @@ Setup symlinks for all of the services and dependencies:
 
 ```bash
 cd node_modules
-ln -s ~/litecore-lib
-ln -s ~/litecore-node
+ln -s ~/berycore-lib
+ln -s ~/berycore-node
 ln -s ~/insight-api
 ln -s ~/insight-ui
 ```
 
-Make sure that the `<datadir>/litecoin.conf` has the necessary settings, for example:
+Make sure that the `<datadir>/berycoin.conf` has the necessary settings, for example:
 ```
 server=1
 whitelist=127.0.0.1
@@ -152,11 +152,11 @@ spentindex=1
 zmqpubrawtx=tcp://127.0.0.1:29332
 zmqpubhashblock=tcp://127.0.0.1:29332
 rpcallowip=127.0.0.1
-rpcuser=litecoin
+rpcuser=berycoin
 rpcpassword=local321
 ```
 
 From within the `devnode` directory with the configuration file, start the node:
 ```bash
-../litecore-node/bin/litecore-node start
+../berycore-node/bin/berycore-node start
 ```
