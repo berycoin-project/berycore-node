@@ -2,7 +2,7 @@
   "name": "berycore-node",
   "description": "Full node with extended capabilities using Berycore and Berycoin Core",
   "author": "BitPay <dev@bitpay.com>",
-  "version": "5.0.02",
+  "version": "5.0.03",
   "main": "./index.js",
   "repository": "git://github.com/berycoin-project/berycore-node.git",
   "homepage": "https://github.com/berycoin-project/berycore-node",
